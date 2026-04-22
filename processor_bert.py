@@ -12,7 +12,7 @@ def classify_with_bert(log_message):
     probabilities = classifer_model.predict_proba([model_embeddings])[0]
     print(probabilities)
     if(max(probabilities) < 0.5):
-        return "Unknown"
+        return "Unclassified"
     else:
         predicted_class = classifer_model.predict([model_embeddings])[0]
     return predicted_class
@@ -22,4 +22,4 @@ if __name__ == "__main__":
     # print(classify_with_bert('API returned 404 not found error'))
     # print(classify_with_bert('File uploaded successfully by user sadd'))
     # print(classify_with_bert('Account with ID 2324 created by manga'))
-    print(classify_with_bert('Account with ID 2324 created by manga'))
+    print(classify_with_bert('hAI HOW AREEE U'))
