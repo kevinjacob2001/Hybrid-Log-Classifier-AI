@@ -45,8 +45,9 @@ Logs are dynamically routed to the most appropriate classifier based on source a
 
 ## Folder Explanation
 
-- **main.py**  
-  Entry point of the application. Reads input data, runs classification pipeline, and writes output.
+
+- **server.py**
+  FastAPI server that accepts the file and sends to the hybrid classification framework
 
 - **processor_regex.py**  
   Contains rule-based classification using predefined regex patterns. Fastest layer for known logs.
@@ -74,26 +75,17 @@ Logs are dynamically routed to the most appropriate classifier based on source a
 ## Setup and Run
 
 ```bash
-# Navigate to project
 cd <your-project-folder>
 
-# (Optional) Create virtual environment
 python -m venv venv
+
 source venv/bin/activate        # Mac/Linux
 # venv\Scripts\activate         # Windows
 
-# Install dependencies
 pip install -r requirements.txt
 
-# Set Groq API key (required for LLM)
 export GROQ_API_KEY=your_api_key_here   # Mac/Linux
+
 # set GROQ_API_KEY=your_api_key_here    # Windows
 
-# Ensure input file exists
-# resources/test.csv with columns: source,log_message
-
-# Run the project
-python main.py
-
-# Output will be saved to:
-# resources/output.csv
+uvicorn server:app --reload
