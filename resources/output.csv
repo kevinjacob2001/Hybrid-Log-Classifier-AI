@@ -1,0 +1,11 @@
+source,log_message,target_label
+ModernCRM,User UserA77 logged out.,Security Alert
+BillingSystem,Payment gateway timeout while processing invoice INV-2026-0042.,Unclassified
+AnalyticsEngine,File sales_q1_2026.parquet uploaded successfully by user DataOps31.,System Notification
+AnalyticsEngine,Backup started at 2026-04-22 03:15:00 UTC.,System Notification
+ModernHR,GET /api/v1/employees HTTP/1.1 RCODE 200 len: 2412 time: 0.0921,HTTP Status
+ModernHR,CPU usage crossed 92% on payroll-worker-3.,Unclassified
+LegacyCRM,Ticket routing failed for case 88321 because destination queue is archived.,Workflow Error
+LegacyCRM,Invoice sync job aborted for account AC-7781 due to schema mismatch.,Workflow Error
+LegacyCRM,Feature 'LegacyLeadImport' is deprecated; use 'PipelineIngestV2'.,(2)
+LegacyCRM,Module 'OldReportBuilder' will be removed in release 5.1; migrate to 'InsightStudio'.,(2)
