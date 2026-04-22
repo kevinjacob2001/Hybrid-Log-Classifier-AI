@@ -1,4 +1,4 @@
-# Hybrid Log Classification Framework
+# Scalable Hybrid Log Classification Framework
 
 ## Overview
 
