@@ -43,6 +43,12 @@ Logs are dynamically routed to the most appropriate classifier based on source a
 
 ---
 
+## Sample process
+
+![Process](resources/process.png)
+
+---
+
 ## Folder Explanation
 
 
