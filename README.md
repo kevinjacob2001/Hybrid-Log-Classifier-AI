@@ -16,8 +16,6 @@ Operational systems generate large volumes of logs that are:
 - Difficult to categorize using a single approach  
 - Critical for monitoring, debugging, and analytics  
 
-Traditional approaches relying on only rules or machine learning models often fail to scale effectively across diverse log patterns.
-
 ---
 
 ## Solution
@@ -37,23 +35,41 @@ Logs are dynamically routed to the most appropriate classifier based on source a
 
 ---
 
+
+
 ## Architecture
 
 ![Architecture Diagram](resources/arch.png)
 
 ---
 
-## System Workflow
+## Folder Explanation
 
-1. Logs are ingested with metadata (`source`, `log_message`)
-2. Logs from predefined legacy sources are routed directly to the LLM
-3. All other logs follow a staged pipeline:
-   - Regex classification (fast path)
-   - If no match → ML-based classification
-4. If classification confidence is insufficient → LLM fallback
-5. Final labels are generated and stored
+- **main.py**  
+  Entry point of the application. Reads input data, runs classification pipeline, and writes output.
+
+- **processor_regex.py**  
+  Contains rule-based classification using predefined regex patterns. Fastest layer for known logs.
+
+- **processor_bert.py**  
+  Handles embedding generation using Sentence Transformers and performs classification using a trained ML model.
+
+- **processor_llm.py**  
+  Uses a Large Language Model (via API) to classify complex or ambiguous logs.
+
+- **models/**  
+  Stores trained machine learning models used for inference (e.g., Logistic Regression classifier).
+
+- **resources/**  
+  Contains input datasets, output files, and architecture diagrams.
+
+- **requirements.txt**  
+  Lists all required dependencies for running the project.
 
 ---
+
+
+
 
 ## Setup and Run
 
