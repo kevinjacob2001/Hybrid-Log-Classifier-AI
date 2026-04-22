@@ -9,10 +9,12 @@ classifer_model = joblib.load('models/log_classifier.joblib')
 
 def classify_with_bert(log_message):
     model_embeddings = model.encode(log_message)
-    probability = classifer_model.predict_proba([model_embeddings])[0]
-    print(probability)
-    predicted_class = classifer_model.predict([model_embeddings])[0]
-
+    probabilities = classifer_model.predict_proba([model_embeddings])[0]
+    print(probabilities)
+    if(max(probabilities) < 0.5):
+        return "Unknown"
+    else:
+        predicted_class = classifer_model.predict([model_embeddings])[0]
     return predicted_class
 
 
