@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements a scalable hybrid log classification system that processes high-volume, unstructured log data using a combination of rule-based methods, machine learning, and large language models.
+This projects implement a source-aware, confidence-based routing mechanism to optimize model usage and reduce unnecessary LLM calls. Deterministic regex handles known patterns with high precision, BERT enables scalable classification for semi-structured logs, and LLM fallback is selectively triggered for low-confidence predictions or low-sample.
 
 The framework is designed for real-world environments such as retail operations, supply chain systems, and enterprise platforms, where logs originate from multiple heterogeneous sources.
 
