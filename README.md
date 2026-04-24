@@ -1,4 +1,4 @@
-# Scalable Hybrid Log Classification Framework
+# Source-Aware Hybrid AI Framework for Intelligent Log Classification
 
 ## Overview
 
